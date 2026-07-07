@@ -43,5 +43,13 @@ The last two rows are the real mental-model shift: Athena performance work is
 
 ## Status
 
-Queries parse clean as Snowflake dialect (sqlglot-checked offline).
-Remaining: run against a live trial account and paste result screenshots here.
+**Ran live on a Snowflake trial (2026-07-07).** Setup built the warehouse +
+3 synthetic tables (50,000 users / 475,466 events / 3,960 subscriptions).
+Verified live results:
+
+- **01 cohort retention** — 27 weekly cohorts with W1/W2/W4 retention
+  (first cohort 68.1% / 69.4% / 70.1%), 360 ms on an XSMALL warehouse.
+- **04 weighted vs unweighted** — per-country averages with the bias delta
+  computed side by side (5 countries), 1.1 s.
+
+Queries also parse clean as Snowflake dialect (sqlglot-checked offline).
